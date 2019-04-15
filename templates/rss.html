@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ name }} RSS Feed</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <header class="main-header">
+    <center>
+        <div>
+            <h1 class="page-title fixed-top">Today's {{ name }} Posts from all feeds</h1>
+
+        </div>
+    </center>
+    <div class="separator"></div>
+    {% for p in posts %}
+        <div class="Feeds">
+            <div class="feed_title">
+                <h3><a class="feed_a_title" href="{{ p.link }}"> {{ p.title|safe }} </a></h3>
+            </div>
+            <h5>Last sync: {{ p.updated_parsed.tm_year }}/{{ p.updated_parsed.tm_mon }}/{{ p.updated_parsed.tm_mday }} {{ p.updated_parsed.tm_hour }}:{{ p.updated_parsed.tm_min }}:{{ p.updated_parsed.tm_sec }}</h5>
+            {% for content in p.content %}
+                <p>{{ content.value|safe }}</p>
+            {% endfor %}
+        </div>
+    {% endfor %}
+    </header>
+
+</body>
+</html>

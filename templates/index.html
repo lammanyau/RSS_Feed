@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9GAG-RSS</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <center>
+        <div class="page-title">
+            <h1>Welcome to 9GAG-RSS</h1>
+            <img src="/static/9GAG_logo.png" alt="9GAG Logo"style="width:300px;height:300px;">
+            <br>
+            <br>
+        </div>
+        <div class="feedlist_row">
+            {% for item in feedlist %}
+                <div class="feed_list">
+                    <h4 class="feedlist_title">
+                        9GAG - {{ item.name }}
+                    </h4>
+                    <div class="feedlist_body">
+                        <a class="feed_url" href="/rss/{{ item.url }}">RSS_Feed</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </center>
+
+    <div class="reference">
+        <h5>
+            <br><br>
+            Source from: <br>
+            <a class="feed_url" href="https://9gag-rss.com/">https://9gag-rss.com/</a> <br>
+            <a class="feed_url" href="https://9gag.com/">https://9gag.com/</a>
+        </h5>
+    </div>
+</body>
+
+</html>
