@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>9GAG-RSS</title>
-    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <center>
         <div class="page-title">
             <h1>Welcome to 9GAG-RSS</h1>
-            <img src="/static/9GAG_logo.png" alt="9GAG Logo"style="width:300px;height:300px;">
+            <img src="{{ url_for('static', filename='9GAG_logo.png') }}" alt="9GAG Logo"style="width:300px;height:300px;">
             <br>
             <br>
         </div>
